@@ -58,8 +58,6 @@ int main()
     // apenas adaptando as correspondências para cada uma delas.
 
     // Entradas da primeira carta:
-    //char temp;
-
     char estado_1, codigo_1[5], nome_1[20];
     float populacao_1, area_1, pib_1;
     int pontos_turisticos_1;
@@ -75,15 +73,18 @@ int main()
     // Entradas da primeira carta:
 
     printf("Entre com o estado da cidade (Carta 1):\n");
-    //scanf("%c", &temp); // temp statement to clear buffer
-    scanf("%2c", &estado_1);
+    //scanf("%c", &estado_1);
+    //getc(stdin);
+    fgets(estado_1, sizeof(estado_1), stdin);
 
     printf("Entre com o código da cidade (Carta 1):\n");
-    scanf("%4s", &codigo_1);
+    //scanf("%4s", codigo_1);
+    fgets(codigo_1, sizeof(codigo_1), stdin);
+    //getc(stdin);
 
     printf("Entre com o nome da cidade (Carta 1):\n");
-    //scanf("%c", &temp); // temp statement to clear buffer
-    scanf("%19s", nome_1);
+    fgets(nome_1, sizeof(nome_1), stdin);
+    //getc(stdin);
 
     printf("Entre com a população da cidade (Carta 1):\n");
     scanf("%f", &populacao_1);
@@ -100,15 +101,17 @@ int main()
     // Entradas da segunda carta:
 
     printf("Entre com o estado da cidade (Carta 2):\n");
-    //scanf("%c", &temp); // temp statement to clear buffer *[\^n]*c
-    scanf("%2c", &estado_2);
+    //scanf("%c", estado_2);
+    //getc(stdin);
 
     printf("Entre com o código da cidade (Carta 2):\n");
-    scanf("%4s", &codigo_2);
+    //scanf("%4s", codigo_2);
+    fgets(codigo_2, sizeof(codigo_2), stdin);
+    //getc(stdin);
 
     printf("Entre com o nome da cidade (Carta 2):\n");
-    //scanf("%c", &temp); // temp statement to clear buffer
-    scanf("%19s", &nome_2);
+    fgets(nome_2, sizeof(nome_2), stdin);
+    //getc(stdin);
 
     printf("Entre com a população da cidade (Carta 2):\n");
     scanf("%f", &populacao_2);
@@ -128,16 +131,16 @@ int main()
 
     // Dados da primeira carta:
     printf("Estado (Carta 1): %c\n", estado_1);
-    printf("Codigo (Carta 1): %s\n", codigo_1);
-    printf("Nome (Carta 1): %s\n", nome_1);
+    printf("Codigo (Carta 1): %4s\n", codigo_1);
+    printf("Nome (Carta 1): %20s\n", nome_1);
     printf("População (Carta 1): %f\n", populacao_1);
     printf("Área (Carta 1): %f\n", area_1);
     printf("Número de Pontos Turísticos (Carta 1): %d\n", pontos_turisticos_1);
 
     // Dados da segunda carta:
     printf("Estado (Carta 2): %c\n", estado_2);
-    printf("Codigo (Carta 2): %s\n", codigo_2);
-    printf("Nome (Carta 2): %s\n", nome_2);
+    printf("Codigo (Carta 2): %4s\n", codigo_2);
+    printf("Nome (Carta 2): %20s\n", nome_2);
     printf("População (Carta 2): %f\n", populacao_2);
     printf("Área (Carta 2): %f\n", area_2);
     printf("Número de Pontos Turísticos (Carta 2): %d\n", pontos_turisticos_2);
