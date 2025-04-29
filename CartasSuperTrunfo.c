@@ -20,6 +20,18 @@
 // Neste nível, foque apenas na leitura, armazenamento e exibição das informações. Você não precisa implementar nenhuma lógica de comparação entre as cartas ou qualquer outro recurso adicional.
 // Não utilize estruturas de repetição (como for ou while) ou estruturas de decisão (como if ou else). Seu código deve ser uma sequência simples de instruções.
 
+// Limpeza do buffer residual.
+void clean_stdin()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+// Número de elementos de um array de caracteres(comprimento do texto). 
+int get_length(char * chars) {
+
+    return sizeof(chars) / sizeof(char);
+}
+
 int main()
 {
     // Criar um programa em C que permita ao usuário inserir os dados de duas cartas do Super Trunfo. Para cada carta, o usuário deverá fornecer as seguintes informações:
@@ -73,17 +85,20 @@ int main()
     // Entradas da primeira carta:
 
     printf("Entre com o estado da cidade (Carta 1):\n");
-    //scanf("%c", &estado_1);
+    scanf("%c", &estado_1);
     //getc(stdin);
-    fgets(estado_1, sizeof(estado_1), stdin);
+    //fgets(estado_1, sizeof(estado_1), stdin);
+    //clean_stdin();
 
     printf("Entre com o código da cidade (Carta 1):\n");
     //scanf("%4s", codigo_1);
-    fgets(codigo_1, sizeof(codigo_1), stdin);
+    fgets(codigo_1, get_length(codigo_1), stdin);
+    clean_stdin();
     //getc(stdin);
 
     printf("Entre com o nome da cidade (Carta 1):\n");
-    fgets(nome_1, sizeof(nome_1), stdin);
+    fgets(nome_1, get_length(nome_1), stdin);
+    clean_stdin();
     //getc(stdin);
 
     printf("Entre com a população da cidade (Carta 1):\n");
@@ -101,17 +116,20 @@ int main()
     // Entradas da segunda carta:
 
     printf("Entre com o estado da cidade (Carta 2):\n");
-    //scanf("%c", estado_2);
+    scanf("%c", estado_2);
     //getc(stdin);
+    //clean_stdin();
 
     printf("Entre com o código da cidade (Carta 2):\n");
     //scanf("%4s", codigo_2);
-    fgets(codigo_2, sizeof(codigo_2), stdin);
+    fgets(codigo_2, get_length(codigo_2), stdin);
     //getc(stdin);
+    clean_stdin();
 
     printf("Entre com o nome da cidade (Carta 2):\n");
-    fgets(nome_2, sizeof(nome_2), stdin);
+    fgets(nome_2, get_length(nome_2), stdin);
     //getc(stdin);
+    clean_stdin();
 
     printf("Entre com a população da cidade (Carta 2):\n");
     scanf("%f", &populacao_2);
